@@ -18,14 +18,14 @@ const handleSubmit = async (e) =>{
         password: registerPassword.value
     }
 
-    const response = await fetch(`${baseUrl}/register`, {
+    const response = await fetch(`http://localhost:8090/api/v1/users/register`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
     })
         .catch(err => console.error(err.message))
 
-    const resonseArr = await response.json()
+    const responseArr = await response.json()
 
     if(response.status === 200){
         window.location.replace(responseArr[0])

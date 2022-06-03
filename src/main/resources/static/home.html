@@ -18,9 +18,11 @@
             <form id="post-form">
                 <h5>Add new photo</h5>
                 <div class="form-group">
+                    <label for="post-input-url"></label>
                     <input class="form-control" id="post-input-url" placeholder="Paste URL"></input>
+                    <label for="post-input-caption"></label>
                     <input class="form-control" id="post-input-caption" placeholder="Caption"></input>
-                    <button id="submit-button" type="submit" >Add</button>
+                    <button id="submit-button" type="submit">Add</button>
                 </div>
             </form>
             <div id="post-container" class="container-fluid"></div>
@@ -37,6 +39,7 @@
     </div>
 
 </div>
+<a class="btn btn-danger navbar-btn" href="./login.html" onclick="handleLogout()">Logout</a>
 <script src="./js/home.js" type="application/javascript"></script>
 </body>
 </html>

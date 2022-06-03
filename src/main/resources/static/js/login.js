@@ -16,7 +16,7 @@ const handleSubmit = async (e) =>{
         password: loginPassword.value
     }
 
-    const response = await fetch(`${baseUrl}/login`, {
+    const response = await fetch(`http://localhost:8090/api/v1/users/login`, {
         method: "POST",
         body: JSON.stringify(bodyObj),
         headers: headers
