@@ -13,13 +13,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>photocollect</name>
 	<description>Pinterest Remake</description>
-	<properties>
-		<maven.compiler.target>18</maven.compiler.target>
-		<maven.compiler.source>18</maven.compiler.source>
-	</properties>
 <!--	<properties>-->
-<!--		<java.version>18</java.version>-->
+<!--		<maven.compiler.target>18</maven.compiler.target>-->
+<!--		<maven.compiler.source>18</maven.compiler.source>-->
 <!--	</properties>-->
+	<properties>
+		<java.version>18</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
