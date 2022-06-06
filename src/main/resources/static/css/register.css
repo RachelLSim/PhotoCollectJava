@@ -17,3 +17,10 @@
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
 }
+
+.container {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 20px;
+}

@@ -55,7 +55,7 @@ async function getPosts(userId){
 }
 
 async function getPostById(postId){
-    await fetch(baseUrl + postId, {
+    await fetch(`${baseUrl}/${postId}`, {
         method: "GET",
         headers: headers
     })
@@ -65,13 +65,14 @@ async function getPostById(postId){
 }
 
 async function handlePostEdit(postId){
+    console.log("edit button clicked")
     let bodyObj = {
         id:  postId,
         url: postUrl.value,
         caption: postCaption.value
     }
 
-    await fetch(baseUrl, {
+    await fetch(`${baseUrl}/${postId}`, {
         method: "PUT",
         body: JSON.stringify(bodyObj),
         headers: headers
@@ -81,7 +82,7 @@ async function handlePostEdit(postId){
 }
 
 async function handleDelete(postId){
-    await fetch(baseUrl + postId, {
+    await fetch(`${baseUrl}/${postId}`, {
         method: "DELETE",
         headers: headers
     })
@@ -94,18 +95,20 @@ const createPostCards = (array) => {
     postContainer.innerHTML = ''
     array.forEach(obj => {
         let postCard = document.createElement("div")
-        postCard.classList.add("m-2")
+        postCard.classList.add("container-fluid")
         postCard.innerHTML = `
-        <div class="card d-flex" style="width: 18rem; height: 18rem">
-            <div class="card-body d-flex flex-column justify-content-between" style="height: available">
-                <p class="card-image">${obj.url}</p>
-                <p class="card-caption">${obj.caption}</p>
-                <div class="d-flex justify-content-between">
-                    <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
-                    <button onclick="getPostById(${obj.id})" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#post-edit-modal">
-                    Edit
-                    </button>
-                </div>
+        <div class="row text-center text-lg-start" id="data-post-id">
+                <div class="col-lg-3 col-md-4 col-6">
+                <a href="#" class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src=${obj.url} alt="photo-url"/>
+                </a>
+                    <p class="card-caption">${obj.caption}</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-danger" onclick="handleDelete(${obj.id})">Delete</button>
+                        <button onclick="getPostById(${obj.id})" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#post-edit-modal">
+                        Edit
+                        </button>
+                 </div>
             </div>
         </div>
         `

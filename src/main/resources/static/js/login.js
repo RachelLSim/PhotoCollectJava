@@ -9,6 +9,7 @@ const headers = {
 const baseUrl = 'http://localhost:8090/api/v1/users'
 
 const handleSubmit = async (e) =>{
+    console.log("submit clicked!")
     e.preventDefault()
 
     let bodyObj = {
