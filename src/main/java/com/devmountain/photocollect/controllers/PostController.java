@@ -27,7 +27,7 @@ public class PostController {
     public void deletePostById(@PathVariable Long postId){
         postService.deletePostById(postId);
     }
-    @PutMapping("/${postId}")
+    @PutMapping
     public void updatePost(@RequestBody PostDto postDto){
         postService.updatePostById(postDto);
     }
