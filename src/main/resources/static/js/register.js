@@ -6,7 +6,7 @@ const headers = {
     'Content-Type':'application/json'
 }
 
-const baseUrl = 'http://localhost8090/api/v1/users'
+const baseUrl = 'http://localhost:8090/api/v1/users'
 
 
 
