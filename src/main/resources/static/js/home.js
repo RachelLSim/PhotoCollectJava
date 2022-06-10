@@ -29,7 +29,8 @@ const handleSubmit = async (e) => {
         caption: document.getElementById('post-input-caption').value
     }
     await addPost(bodyObj);
-    document.getElementById("post-input").value = ""
+    document.getElementById("post-input-url").value = ""
+    document.getElementById("post-input-caption").value = ""
 }
 
 async function addPost(obj) {
