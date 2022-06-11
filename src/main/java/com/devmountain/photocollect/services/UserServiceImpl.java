@@ -40,10 +40,13 @@ public class UserServiceImpl implements UserService {
             if(passwordEncoder.matches(userDto.getPassword(), userOptional.get().getPassword())){
                 response.add("http://localhost:8090/home.html");
                 response.add(String.valueOf(userOptional.get().getId()));
+                System.out.println("hello world");
             } else {
+                System.out.println("password incorrect");
                 response.add("Username or password incorrect");
             }
         } else {
+            System.out.println("User does not exist");
             response.add("Username or password incorrect");
         }
         return response;
